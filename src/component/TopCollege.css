@@ -1,0 +1,552 @@
+.top-college-container {
+  padding: 40px 20px;
+  background: white;
+  overflow: hidden;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.admit-text {
+  color: #ff6b35;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.main-title {
+  color: #2c3e50;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.universities-section {
+  position: relative;
+  margin-top: 30px;
+}
+
+.university-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  white-space: nowrap;
+}
+
+/* First row animation - moves from left to right */
+.row1 {
+  animation: slideLeftToRight 60s linear infinite;
+}
+
+/* Second row animation - moves from right to left */
+.row2 {
+  animation: slideRightToLeft 60s linear infinite;
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.university-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.university-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.university-logo {
+  margin-bottom: 10px;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.logo-subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Stevens Institute of Technology */
+.stevens-logo .logo-text {
+  color: #d32f2f;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.stevens-logo .logo-subtitle {
+  color: #d32f2f;
+  font-size: 8px;
+}
+
+/* New York Institute of Technology */
+.nyit-logo {
+  position: relative;
+}
+
+.nyit-logo::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: #ffd700;
+}
+
+.nyit-logo .logo-text {
+  color: #1976d2;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Pace University */
+.pace-logo .logo-text {
+  color: #1565c0;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: serif;
+}
+
+.pace-logo::after {
+  content: '';
+  width: 60%;
+  height: 2px;
+  background: #ffd700;
+  border-radius: 1px;
+  margin-top: 5px;
+}
+
+.pace-logo .logo-subtitle {
+  color: #1565c0;
+  font-size: 12px;
+}
+
+/* UAB */
+.uab-logo .logo-text {
+  color: #2e7d32;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.uab-logo .logo-subtitle {
+  color: #2e7d32;
+  font-size: 8px;
+}
+
+/* University of Illinois Springfield */
+.uis-logo .logo-text {
+  color: #1565c0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.uis-logo .logo-subtitle {
+  color: #1565c0;
+  font-size: 10px;
+}
+
+/* UMass Boston */
+.umass-logo .logo-text {
+  color: #1976d2;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* UIC */
+.uic-logo {
+  position: relative;
+}
+
+.uic-logo .logo-text {
+  background: #d32f2f;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 auto 5px;
+}
+
+.uic-logo .logo-subtitle {
+  color: #333;
+  font-size: 8px;
+}
+
+/* NJIT */
+.njit-logo .logo-text {
+  color: #d32f2f;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+
+.njit-logo::after {
+  content: '';
+  width: 50%;
+  height: 2px;
+  background: #d32f2f;
+  border-radius: 1px;
+  margin-top: 3px;
+}
+
+.njit-logo .logo-subtitle {
+  color: #d32f2f;
+  font-size: 8px;
+}
+
+/* ASU */
+.asu-logo .logo-text {
+  color: #8e24aa;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.asu-logo .logo-subtitle {
+  color: #8e24aa;
+  font-size: 8px;
+}
+
+/* University of New Haven */
+.unh-logo .logo-text {
+  color: #1565c0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* University of Birmingham */
+.birmingham-logo .logo-text {
+  color: #1565c0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* University of Surrey */
+.surrey-logo .logo-text {
+  color: #1976d2;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* University of Aberdeen */
+.aberdeen-logo .logo-text {
+  color: #1976d2;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Aston University */
+.aston-logo .logo-text {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.aston-logo .logo-subtitle {
+  background: #333;
+  color: white;
+  padding: 2px 6px;
+  font-size: 8px;
+  border-radius: 2px;
+}
+
+/* Durham University */
+.durham-logo .logo-text {
+  color: #6a1b9a;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* University of Cambridge */
+.cambridge-logo .logo-text {
+  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* University of Adelaide */
+.adelaide-logo .logo-text {
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Oxford Brookes University */
+.oxford-brookes-logo .logo-text {
+  color: #424242;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* University of Glasgow */
+.glasgow-logo .logo-text {
+  color: #1976d2;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* University of Edinburgh */
+.edinburgh-logo .logo-text {
+  color: #333;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.university-name {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .top-college-container {
+    padding: 35px 15px;
+  }
+  
+  .header-section {
+    margin-bottom: 35px;
+  }
+  
+  .admit-text {
+    font-size: 22px;
+  }
+  
+  .main-title {
+    font-size: 32px;
+  }
+  
+  .university-row {
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .university-card {
+    min-width: 180px;
+    padding: 18px;
+  }
+  
+  .logo-text {
+    font-size: 16px;
+  }
+  
+  .logo-subtitle {
+    font-size: 9px;
+  }
+  
+  .university-name {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-college-container {
+    padding: 30px 10px;
+  }
+  
+  .header-section {
+    margin-bottom: 30px;
+  }
+  
+  .admit-text {
+    font-size: 18px;
+  }
+  
+  .main-title {
+    font-size: 28px;
+  }
+  
+  .university-row {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .university-card {
+    min-width: 150px;
+    padding: 15px;
+  }
+  
+  .logo-text {
+    font-size: 14px;
+  }
+  
+  .logo-subtitle {
+    font-size: 8px;
+  }
+  
+  .university-name {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-college-container {
+    padding: 25px 8px;
+  }
+  
+  .header-section {
+    margin-bottom: 25px;
+  }
+  
+  .admit-text {
+    font-size: 16px;
+  }
+  
+  .main-title {
+    font-size: 24px;
+  }
+  
+  .university-row {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .university-card {
+    min-width: 130px;
+    padding: 12px;
+  }
+  
+  .logo-text {
+    font-size: 12px;
+  }
+  
+  .logo-subtitle {
+    font-size: 7px;
+  }
+  
+  .university-name {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-college-container {
+    padding: 20px 5px;
+  }
+  
+  .header-section {
+    margin-bottom: 20px;
+  }
+  
+  .admit-text {
+    font-size: 14px;
+  }
+  
+  .main-title {
+    font-size: 20px;
+  }
+  
+  .university-row {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .university-card {
+    min-width: 110px;
+    padding: 10px;
+  }
+  
+  .logo-text {
+    font-size: 10px;
+  }
+  
+  .logo-subtitle {
+    font-size: 6px;
+  }
+  
+  .university-name {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .top-college-container {
+    padding: 15px 3px;
+  }
+  
+  .header-section {
+    margin-bottom: 15px;
+  }
+  
+  .admit-text {
+    font-size: 12px;
+  }
+  
+  .main-title {
+    font-size: 18px;
+  }
+  
+  .university-row {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .university-card {
+    min-width: 100px;
+    padding: 8px;
+  }
+  
+  .logo-text {
+    font-size: 9px;
+  }
+  
+  .logo-subtitle {
+    font-size: 5px;
+  }
+  
+  .university-name {
+    font-size: 7px;
+  }
+}
+
+/* Pause animation on hover */
+.university-row:hover {
+  animation-play-state: paused;
+}
+
+/* Ensure smooth scrolling */
+.universities-section {
+  overflow: hidden;
+} 

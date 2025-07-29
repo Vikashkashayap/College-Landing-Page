@@ -1,0 +1,144 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.main-content {
+  margin-top: 80px; /* Adjusted margin for better spacing with navbar */
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.hero-section-2col {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #fff6f7 60%, #f7f0ff 100%);
+  padding: 40px 0;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.event-info {
+  display: flex;
+  gap: 24px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.hero-image-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-person-img {
+  width: 260px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.global-ticket-box {
+  background: #f0f7ff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 2px 12px #0001;
+  margin-top: -40px;
+  z-index: 1;
+  position: relative;
+}
+
+.global-ticket-title {
+  background: #7ec6ff;
+  color: #fff;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.global-ticket-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.global-ticket-box li {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 60px 40px 0;
+}
+
+.expo-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #a020f0;
+  margin-bottom: 24px;
+}
+
+.expo-title span {
+  color: #ff3cac;
+}
+
+.click-here-btn {
+  margin-top: 24px;
+  background: #444851;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}

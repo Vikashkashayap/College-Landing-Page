@@ -1,0 +1,238 @@
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid #f0f0f0;
+  background: white;
+  min-height: 60px;
+  width: 100%;
+  position: relative;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+  justify-content: flex-start;
+}
+
+.navbar-logo {
+  font-size: 32px;
+  margin-right: 4px;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.navbar-brand-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #2d3e6e;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: baseline;
+}
+
+.navbar-brand-domain {
+  font-size: 12px;
+  color: #888;
+  margin-left: 2px;
+  font-weight: 400;
+}
+
+.study-abroad-btn {
+  background: #ff8000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.navbar-center {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar-heading {
+  font-weight: 700;
+  font-size: 32px;
+  color: #222;
+}
+
+.navbar-heading-gradient {
+  background: linear-gradient(90deg, #6ea8fe, #a259e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.navbar-right {
+  min-width: 260px;
+  display: flex;
+}
+
+.register-btn {
+  background: linear-gradient(90deg, #e040fb, #6ea8fe);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(110,168,254,0.12);
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(110,168,254,0.2);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  color: #333;
+  margin-left: auto;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+
+.mobile-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.mobile-heading-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: #222;
+}
+
+.mobile-register-container {
+  text-align: center;
+}
+
+.mobile-register-btn {
+  background: linear-gradient(90deg, #e040fb, #6ea8fe);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(110,168,254,0.12);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.mobile-register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(110,168,254,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  
+  .navbar-left {
+    min-width: auto;
+    flex: 1;
+  }
+  
+  .navbar-logo {
+    font-size: 24px;
+  }
+  
+  .navbar-brand-text {
+    font-size: 16px;
+  }
+  
+  .navbar-brand-domain {
+    font-size: 10px;
+  }
+  
+  .study-abroad-btn {
+    padding: 2px 12px;
+    font-size: 12px;
+  }
+  
+  .navbar-center {
+    display: none;
+  }
+  
+  .navbar-right {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .navbar-logo {
+    font-size: 20px;
+  }
+  
+  .navbar-brand-text {
+    font-size: 14px;
+  }
+  
+  .study-abroad-btn {
+    padding: 1px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-heading {
+    font-size: 28px;
+  }
+  
+  .register-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+} 

@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
 
           <div className="copyright">
-            Copyright © Collegedunia 2024 | Privacy Policy
+            Copyright © Apnadunia 2024 | Privacy Policy
           </div>
         </div>
       </div>

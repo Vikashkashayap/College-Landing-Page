@@ -39,12 +39,12 @@
 
 /* First row animation - moves from left to right */
 .row1 {
-  animation: slideLeftToRight 60s linear infinite;
+  animation: slideLeftToRight 70s linear infinite;
 }
 
 /* Second row animation - moves from right to left */
 .row2 {
-  animation: slideRightToLeft 60s linear infinite;
+  animation: slideRightToLeft 70s linear infinite;
 }
 
 @keyframes slideLeftToRight {

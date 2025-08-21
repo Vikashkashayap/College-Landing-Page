@@ -12,6 +12,7 @@ import Faq from './component/Faq';
 import Footer from './component/Footer';
 import GetWes from './component/GetWes';
 import Sponser from './component/Sponser';
+import Watsup from './component/watsup';
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
         {/* <GetWes/> */}
       </div>
       <Footer/>
+      <Watsup />
     </>
   );
 }

@@ -28,7 +28,7 @@ function App() {
         <AluminiStudent/>
         <Testnomial/>
         <Faq/>
-        <GetWes/>
+        {/* <GetWes/> */}
       </div>
       <Footer/>
     </>

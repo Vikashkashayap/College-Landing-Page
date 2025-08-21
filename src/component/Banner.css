@@ -2,68 +2,260 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 2rem auto;
   padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+/* Responsive adjustments for banner container */
+@media (min-width: 768px) {
+  .banner-container {
+    max-width: 90%;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .banner-container {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
 }
 
 .banner-section {
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Visa Fee Section */
 .visa-section {
   background: linear-gradient(135deg, #FFE5E5 0%, #FFF5F5 100%);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #FFE0E0;
+}
+
+.visa-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.05) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .visa-section .content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .text-content {
   flex: 1;
+  padding-right: 1.5rem;
+}
+
+.offer-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FF4757, #FF3742);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 15px rgba(255, 71, 87, 0.5);
+  }
+  100% {
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+  }
 }
 
 .text-content h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  color: #2C3E50;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.5px;
 }
 
 .text-content p {
-  font-size: 1.5rem;
-  color: #FF6B6B;
+  font-size: 1.4rem;
+  color: #E74C3C;
   margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Benefits List Styles */
+.benefits-list {
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #34495E;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateX(5px);
+}
+
+.benefit-item:last-child {
+  margin-bottom: 0;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+  color: white;
+  border-radius: 50%;
+  margin-right: 0.875rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+  flex-shrink: 0;
 }
 
 .register-btn, .apply-btn {
-  background-color: #FF6B6B;
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn::before, .apply-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.register-btn:hover::before, .apply-btn:hover::before {
+  left: 100%;
 }
 
 .register-btn:hover, .apply-btn:hover {
-  background-color: #FF5252;
+  background: linear-gradient(135deg, #FF5252, #FF7676);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.register-btn:active, .apply-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.trust-icon {
+  font-size: 1.1rem;
+}
+
+.trust-text {
+  font-size: 0.85rem;
+  color: #2C3E50;
+  font-weight: 500;
 }
 
 .icon-wrapper {
   flex: 0 0 auto;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
+  position: relative;
 }
 
 .megaphone-icon, .cap-icon {
   width: 120px;
   height: 120px;
   object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Add decorative elements */
+.visa-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #FF6B6B, transparent);
+  border-radius: 2px;
 }
 
 /* Stats Section */
@@ -75,7 +267,16 @@
 .stats-title {
   color: #333;
   font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats-subtitle {
+  color: #666;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stats-grid {
@@ -91,27 +292,174 @@
   margin-bottom: 0.5rem;
 }
 
-.stat-item p {
+.stat-label {
   color: #666;
   font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stat-description {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.stats-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFF3E0 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #FF9800;
+}
+
+.highlight-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
 .stats-note {
   color: #666;
   font-size: 0.9rem;
   max-width: 80%;
-  margin: 0 auto;
+  margin: 0;
+  font-weight: 500;
 }
 
 /* Scholarship Section */
 .scholarship-section {
   background: linear-gradient(135deg, #E5F6FF 0%, #F5FBFF 100%);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #E0F2FE;
+}
+
+.scholarship-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .scholarship-section .content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.scholarship-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-blue {
+  0% {
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 15px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Scholarship Details Styles */
+.scholarship-details {
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.scholarship-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #1E293B;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: transform 0.2s ease;
+}
+
+.scholarship-feature:hover {
+  transform: translateX(5px);
+}
+
+.scholarship-feature:last-child {
+  margin-bottom: 0;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  color: white;
+  border-radius: 50%;
+  margin-right: 0.875rem;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  flex-shrink: 0;
+}
+
+.scholarship-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.highlight-icon {
+  font-size: 1.1rem;
+}
+
+.highlight-text {
+  font-size: 0.85rem;
+  color: #1E293B;
+  font-weight: 500;
+}
+
+/* Add decorative elements for scholarship section */
+.scholarship-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #3B82F6, transparent);
+  border-radius: 2px;
 }
 
 /* Enhanced Responsive Design */
@@ -122,15 +470,20 @@
   }
   
   .banner-section {
-    padding: 1.75rem;
+    padding: 1.25rem;
   }
   
   .text-content h2 {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
   }
   
   .text-content p {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+  }
+  
+  .offer-badge, .scholarship-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.7rem;
   }
   
   .stats-title {
@@ -145,6 +498,22 @@
     width: 100px;
     height: 100px;
   }
+  
+  .benefit-item, .scholarship-feature {
+    font-size: 0.9rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 1rem;
+  }
+  
+  .trust-indicator, .scholarship-highlight {
+    padding: 0.5rem;
+  }
+  
+  .trust-text, .highlight-text {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -155,7 +524,7 @@
   }
   
   .banner-section {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
   
   .stats-grid {
@@ -169,15 +538,33 @@
   }
 
   .icon-wrapper {
-    margin: 1.5rem 0 0 0;
+    margin: 1.25rem 0 0 0;
   }
 
   .text-content h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .text-content p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+  
+  .offer-badge, .scholarship-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .cta-section {
+    align-items: center;
+  }
+  
+  .trust-indicator, .scholarship-highlight {
+    padding: 0.45rem;
+    max-width: 200px;
+  }
+  
+  .trust-text, .highlight-text {
+    font-size: 0.75rem;
   }
   
   .stats-title {
@@ -191,6 +578,26 @@
   .megaphone-icon, .cap-icon {
     width: 80px;
     height: 80px;
+  }
+  
+  .benefit-item, .scholarship-feature {
+    font-size: 0.85rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+  
+  .stats-highlight {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+  
+  .highlight-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -232,8 +639,12 @@
     font-size: 1.4rem;
   }
   
-  .stat-item p {
+  .stat-label {
     font-size: 0.9rem;
+  }
+  
+  .stat-description {
+    font-size: 0.8rem;
   }
   
   .stats-note {
@@ -244,6 +655,15 @@
   .megaphone-icon, .cap-icon {
     width: 70px;
     height: 70px;
+  }
+  
+  .benefit-item, .scholarship-feature {
+    font-size: 0.85rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 0.9rem;
+    max-width: 95%;
   }
 }
 
@@ -285,8 +705,12 @@
     font-size: 1.2rem;
   }
   
-  .stat-item p {
+  .stat-label {
     font-size: 0.8rem;
+  }
+  
+  .stat-description {
+    font-size: 0.75rem;
   }
   
   .stats-note {
@@ -297,6 +721,15 @@
   .megaphone-icon, .cap-icon {
     width: 60px;
     height: 60px;
+  }
+  
+  .benefit-item, .scholarship-feature {
+    font-size: 0.8rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 0.85rem;
+    max-width: 100%;
   }
 }
 
@@ -338,8 +771,12 @@
     font-size: 1rem;
   }
   
-  .stat-item p {
+  .stat-label {
     font-size: 0.75rem;
+  }
+  
+  .stat-description {
+    font-size: 0.7rem;
   }
   
   .stats-note {
@@ -350,5 +787,13 @@
   .megaphone-icon, .cap-icon {
     width: 50px;
     height: 50px;
+  }
+  
+  .benefit-item, .scholarship-feature {
+    font-size: 0.75rem;
+  }
+  
+  .stats-subtitle {
+    font-size: 0.8rem;
   }
 } 

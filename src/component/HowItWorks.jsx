@@ -15,11 +15,13 @@ const HowItWorks = () => {
             <div className="step-image">
               <div className="image-wrapper step-1-bg">
                 <div className="step-number">01</div>
-                <div className="image-placeholder">
-                  <div className="placeholder-content">
-                    <div className="person-icon">👩‍💼</div>
-                    <div className="text-overlay">Collegedunia STUDY ABROAD</div>
-                  </div>
+                <div className="image-overlay">
+                  <img 
+                    src="https://img.freepik.com/free-photo/writers-scene-concept_23-2151931194.jpg?semt=ais_hybrid&w=740&q=80" 
+                    alt="Professional woman at desk" 
+                    className="step-image-content"
+                  />
+                  <div className="image-text-overlay"> STUDY ABROAD</div>
                 </div>
               </div>
             </div>
@@ -34,11 +36,13 @@ const HowItWorks = () => {
             <div className="step-image">
               <div className="image-wrapper step-2-bg">
                 <div className="step-number">02</div>
-                <div className="image-placeholder">
-                  <div className="placeholder-content">
-                    <div className="group-icon">👥</div>
-                    <div className="text-overlay">Meet the Experts</div>
-                  </div>
+                <div className="image-overlay">
+                  <img 
+                    src="https://bsmedia.business-standard.com/_media/bs/img/article/2020-01/24/full/1579808966-883.jpg?im=FeatureCrop,size=(826,465)" 
+                    alt="Team of professionals" 
+                    className="step-image-content"
+                  />
+                  <div className="image-text-overlay">Meet the Experts</div>
                 </div>
               </div>
             </div>
@@ -52,11 +56,13 @@ const HowItWorks = () => {
             <div className="step-image">
               <div className="image-wrapper step-3-bg">
                 <div className="step-number">03</div>
-                <div className="image-placeholder">
-                  <div className="placeholder-content">
-                    <div className="laptop-icon">💻</div>
-                    <div className="text-overlay">Apply & Get Offers</div>
-                  </div>
+                <div className="image-overlay">
+                  <img 
+                    src="https://t4.ftcdn.net/jpg/02/54/39/33/360_F_254393324_feP93EMl8lUvITiEWWWwWmxXfTHQTK2y.jpg" 
+                    alt="Professional man with laptop" 
+                    className="step-image-content"
+                  />
+                  <div className="image-text-overlay">Apply & Get Offers</div>
                 </div>
               </div>
             </div>

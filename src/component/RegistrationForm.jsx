@@ -82,21 +82,10 @@ const RegistrationForm = ({ isOpen, onClose }) => {
             </div>
 
             <div className="form-row">
-              <div className="form-group phone-group">
+              <div className="form-group">
                 <label htmlFor="phoneNumber">Phone Number*</label>
                 <div className="phone-input-container">
-                  <select
-                    name="countryCode"
-                    value={formData.countryCode}
-                    onChange={handleInputChange}
-                    className="country-code-select"
-                  >
-                    <option value="91">91</option>
-                    <option value="1">1</option>
-                    <option value="44">44</option>
-                    <option value="61">61</option>
-                    <option value="86">86</option>
-                  </select>
+                
                   <input
                     type="tel"
                     id="phoneNumber"
@@ -221,7 +210,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
                   required
                 >
                   <option value="">Select Intake</option>
-                  <option value="fall-2024">Fall 2024</option>
+                  {/* <option value="fall-2024">Fall 2024</option> */}
                   <option value="spring-2025">Spring 2025</option>
                   <option value="fall-2025">Fall 2025</option>
                   <option value="spring-2026">Spring 2026</option>
@@ -231,7 +220,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          <div className="form-section">
+          {/* <div className="form-section">
             <h3 className="section-title">Enter scores for exams if given, else leave blank:</h3>
             
             <div className="scores-grid">
@@ -307,7 +296,7 @@ const RegistrationForm = ({ isOpen, onClose }) => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
 
           <button type="submit" className="submit-button">
             Submit Registration

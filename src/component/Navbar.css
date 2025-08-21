@@ -4,31 +4,49 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+.navbar-wrapper.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 6px 20px;
   border-bottom: 1px solid #f0f0f0;
   background: white;
-  min-height: 60px;
+  min-height: 45px;
   width: 100%;
   position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(240, 240, 240, 0.8);
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 10px;
-  min-width: 220px;
+  gap: 8px;
+  min-width: 180px;
   justify-content: flex-start;
 }
 
 .navbar-logo {
-  font-size: 32px;
+  font-size: 24px;
   margin-right: 4px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.1);
 }
 
 .navbar-brand {
@@ -59,11 +77,18 @@
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 4px 16px;
+  padding: 3px 12px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 2px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.study-abroad-btn:hover {
+  background: #e67300;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 128, 0, 0.3);
 }
 
 .navbar-center {
@@ -73,19 +98,21 @@
 
 .navbar-heading {
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
   color: #222;
+  transition: all 0.3s ease;
 }
 
 .navbar-heading-gradient {
   background: linear-gradient(90deg, #6ea8fe, #a259e6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 700;
 }
 
 .navbar-right {
-  min-width: 260px;
+  min-width: 200px;
   display: flex;
 }
 
@@ -94,12 +121,29 @@
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 14px 36px;
+  padding: 10px 24px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 12px rgba(110,168,254,0.12);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.register-btn:hover::before {
+  left: 100%;
 }
 
 .register-btn:hover {
@@ -111,11 +155,45 @@
   display: none;
   background: none;
   border: none;
-  font-size: 24px;
   cursor: pointer;
   padding: 8px;
   color: #333;
   margin-left: auto;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .mobile-menu {
@@ -125,9 +203,21 @@
   right: 0;
   background: white;
   border-bottom: 1px solid #f0f0f0;
-  padding: 20px;
+  padding: 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   z-index: 1001;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.mobile-menu.open {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 20px;
 }
 
 .mobile-heading {
@@ -166,7 +256,27 @@
   box-shadow: 0 4px 20px rgba(110,168,254,0.2);
 }
 
-/* Responsive Design */
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 6px 15px;
+  }
+  
+  .navbar-heading {
+    font-size: 20px;
+  }
+  
+  .register-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  
+  .navbar-left {
+    min-width: 150px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 20px;
@@ -205,6 +315,19 @@
   .mobile-menu-btn {
     display: block;
   }
+  
+  .mobile-menu.open {
+    padding: 15px 20px;
+  }
+  
+  .mobile-heading-text {
+    font-size: 18px;
+  }
+  
+  .mobile-register-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -224,15 +347,97 @@
     padding: 1px 8px;
     font-size: 10px;
   }
+  
+  .mobile-menu.open {
+    padding: 10px 15px;
+  }
+  
+  .mobile-heading-text {
+    font-size: 16px;
+  }
+  
+  .mobile-register-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .hamburger {
+    width: 25px;
+    height: 20px;
+  }
+  
+  .hamburger-line {
+    height: 2px;
+  }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Large Desktop Styles */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 8px 30px;
+  }
+  
   .navbar-heading {
     font-size: 28px;
   }
   
   .register-btn {
-    padding: 12px 24px;
-    font-size: 16px;
+    padding: 12px 30px;
+    font-size: 18px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .navbar {
+    border-bottom-width: 0.5px;
+  }
+  
+  .mobile-menu {
+    border-bottom-width: 0.5px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-wrapper,
+  .mobile-menu,
+  .hamburger-line,
+  .register-btn,
+  .study-abroad-btn,
+  .navbar-logo {
+    transition: none;
+  }
+  
+  .register-btn::before {
+    display: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: #1a1a1a;
+    border-bottom-color: #333;
+  }
+  
+  .navbar.scrolled {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom-color: rgba(51, 51, 51, 0.8);
+  }
+  
+  .mobile-menu {
+    background: #1a1a1a;
+    border-bottom-color: #333;
+  }
+  
+  .navbar-heading,
+  .mobile-heading-text {
+    color: #fff;
+  }
+  
+  .hamburger-line {
+    background: #fff;
   }
 } 

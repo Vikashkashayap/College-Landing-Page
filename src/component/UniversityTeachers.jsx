@@ -9,45 +9,31 @@ const UniversityTeachers = () => {
   const teachers = [
     {
       id: 1,
-      name: "Maitri Nagar",
-      university: "The University of Tulsa",
-      image: "https://img.freepik.com/free-photo/senior-male-professor-holding-notebook-standing-against-blackboard_23-2148200961.jpg?semt=ais_hybrid&w=740",
-      bgColor: "linear-gradient(135deg, #4F46E5, #7C3AED)"
+      name: "Ritesh Bakshi",
+      university: "Anglia Ruskin University",
+      image: "https://thumbs.dreamstime.com/b/handsome-indian-man-face-photo-cautious-look-27178607.jpg",
+      bgColor: "#EC4899" // Bright magenta
     },
     {
       id: 2,
-      name: "Akshayitree",
-      university: "Florida Atlantic University - Studygroup (11)",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      bgColor: "linear-gradient(135deg, #EC4899, #8B5CF6)"
+      name: "Maitri Nagar",
+      university: "The University of Tulsa",
+      image: "https://www.shutterstock.com/image-photo/portrait-young-adult-indian-woman-260nw-2387090027.jpg",
+      bgColor: "#3B82F6" // Blue
     },
     {
       id: 3,
-      name: "Rajat Garg",
-      university: "Arizona State University - Kaplan (4)",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      bgColor: "linear-gradient(135deg, #F59E0B, #EF4444)"
+      name: "Akshayitree",
+      university: "Florida Atlantic University - Studygroup (II)",
+      image: "https://img.freepik.com/free-photo/indian-woman-posing-cute-stylish-outfit-camera-smiling_482257-122351.jpg?semt=ais_hybrid&w=740&q=80",
+      bgColor: "#8B5CF6" // Purple
     },
     {
       id: 4,
-      name: "Musarrat Jahan",
-      university: "University of East Anglia",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-      bgColor: "linear-gradient(135deg, #3B82F6, #1E40AF)"
-    },
-    {
-      id: 5,
-      name: "Dr. Sarah Johnson",
-      university: "University of California, Berkeley",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-      bgColor: "linear-gradient(135deg, #10B981, #059669)"
-    },
-    {
-      id: 6,
-      name: "Prof. Michael Chen",
-      university: "Stanford University",
+      name: "Rajat Garg",
+      university: "Arizona State University - Kaplan (4)",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      bgColor: "linear-gradient(135deg, #8B5CF6, #7C3AED)"
+      bgColor: "#F59E0B" // Orange
     }
   ];
 
@@ -96,9 +82,7 @@ const UniversityTeachers = () => {
     <section className="university-teachers">
       <div className="container">
         <div className="section-header">
-          <h2>
-            <span className="highlight">CONNECT 1:1</span> With University Delegates
-          </h2>
+          <h2>With University Delegates</h2>
         </div>
 
         <div className="carousel-container">
@@ -122,7 +106,7 @@ const UniversityTeachers = () => {
                   <div className="teacher-image-container">
                     <div 
                       className="teacher-background" 
-                      style={{ background: teacher.bgColor }}
+                      style={{ backgroundColor: teacher.bgColor }}
                     ></div>
                     <img 
                       src={teacher.image} 

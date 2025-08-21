@@ -49,7 +49,7 @@ const Footer = () => {
                   <rect x="8" y="18" width="8" height="2" fill="white"/>
                 </svg>
               </div>
-              <span className="logo-text">collegedunia</span>
+              <span className="logo-text">Study Abroad</span>
             </div>
             
             <div className="study-abroad-badge">

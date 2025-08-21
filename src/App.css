@@ -1,11 +1,35 @@
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
+
+/* Add responsive padding for larger screens */
+@media (min-width: 768px) {
+  #root {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  #root {
+    max-width: 1280px;
+    padding: 0 2rem;
+  }
+}
+
 .main-content {
   margin-top: 80px; /* Adjusted margin for better spacing with navbar */
+  width: 100%;
+  overflow-x: hidden;
 }
 .logo {
   height: 6em;
